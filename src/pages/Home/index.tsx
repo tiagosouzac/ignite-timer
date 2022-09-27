@@ -85,6 +85,12 @@ export function Home() {
   const minutes = String(minutesAmount).padStart(2, '0')
   const seconds = String(secondsAmount).padStart(2, '0')
 
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `${minutes}: ${seconds} | Ignite Timer`
+    }
+  }, [minutes, seconds, activeCycle])
+
   return (
     <Container>
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
