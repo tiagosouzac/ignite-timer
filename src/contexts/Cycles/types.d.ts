@@ -1,6 +1,11 @@
 import { ReactNode } from 'react'
 import { Cycle } from '../../@types/cycle'
 
+export type CyclesState = {
+  cycles: Cycle[]
+  activeCycleId: string | null
+}
+
 export type CreateCycleData = {
   task: string
   minutes: number
