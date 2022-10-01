@@ -1,26 +1,7 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, useState } from 'react'
 
-import { Cycle } from '../@types/cycle'
-
-type CreateCycleData = {
-  task: string
-  minutes: number
-}
-
-type ContextProps = {
-  cycles: Cycle[]
-  activeCycle?: Cycle
-  activeCycleId: string | null
-  markCurrentCycleAsFinished: () => void
-  secondsPassed: number
-  setSecondsAmountPassed: (seconds: number) => void
-  createNewCycle: (data: CreateCycleData) => void
-  interruptCurrentCycle: () => void
-}
-
-type ProviderProps = {
-  children: ReactNode
-}
+import { ContextProps, CreateCycleData, ProviderProps } from './types'
+import { Cycle } from '../../@types/cycle'
 
 export const CyclesContext = createContext({} as ContextProps)
 
