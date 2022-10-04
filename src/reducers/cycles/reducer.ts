@@ -1,13 +1,14 @@
 import { CyclesState } from '../../contexts/Cycles/types'
 import { ActionTypes } from './actions'
+import { Action } from './types'
 
-export function cyclesReducer(state: CyclesState, action: any) {
+export function cyclesReducer(state: CyclesState, action: Action) {
   switch (action.type) {
     case ActionTypes.ADD_NEW_CYCLE:
       return {
         ...state,
-        cycles: [...state.cycles, action.payload.newCycle],
-        activeCycleId: action.payload.newCycle.id,
+        cycles: [...state.cycles, action.payload!.newCycle],
+        activeCycleId: action.payload!.newCycle.id,
       }
 
     case ActionTypes.INTERRUPT_CURRENT_CYCLE: {
